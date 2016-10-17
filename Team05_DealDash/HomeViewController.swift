@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  Team05_DealDash
 //
 //  Created by Chidella,Sarath Kumar on 10/6/16.
@@ -8,8 +8,21 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class HomeViewController: UIViewController {
+    
+    @IBOutlet weak var welcomeLBL: UILabel!
+    
+    @IBOutlet weak var selectLBL: UILabel!
+    
+    
+    @IBAction func instoreBTN(sender: AnyObject) {
+    }
+    
 
+    @IBAction func onlineBTN(sender: AnyObject) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
