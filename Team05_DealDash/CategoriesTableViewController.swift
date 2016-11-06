@@ -7,17 +7,12 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class CategoriesTableViewController: UITableViewController {
 
-    var categories:[Category] = [Category(name:"Food", image:"food.jpeg"),
-                                 Category(name:"Clothing", image:"clothing.jpg"),
-                                 Category(name:"Electronics", image:"electronics.jpg"),
-                                 Category(name:"Books", image:"books.jpg"),
-                                 Category(name:"Sports", image:"sports.jpg"),
-                                 Category(name:"Home & Furniture", image:"home .jpg"),
-                                 Category(name:"Kitchen Appliances", image:"kitchen.jpg"),
-                                 ]
+    let category = CategoriesList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +38,7 @@ class CategoriesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return categories.count
+        return category.numCategories()
     }
 
     
@@ -53,9 +48,14 @@ class CategoriesTableViewController: UITableViewController {
         let categoryImage:UIImageView = cell.viewWithTag(100) as! UIImageView
         let categoryName:UILabel = cell.viewWithTag(101) as! UILabel
         
-        categoryName.text = categories[indexPath.row].name
-        categoryImage.image = UIImage(named: "\(categories[indexPath.row].image)")
+        categoryName.text = category.categoryType(indexPath.row).name
+        categoryImage.image = UIImage(named: "\(category.categoryType(indexPath.row).image)")
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let offersTVC:OffersTableTableViewController = segue.destinationViewController as! OffersTableTableViewController
+        offersTVC.offerList = category.categoryType((tableView.indexPathForSelectedRow?.row)!)
     }
     
 //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

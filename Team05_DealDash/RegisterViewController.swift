@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class RegisterViewController: UIViewController {
     
@@ -24,30 +26,66 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func signupBTN(sender: AnyObject) {
-        let fName:String? = String(firstNameTF.text!)
-        let lName:String? = String(lastNameTF.text!)
-        let email:String? = String(emailTF.text!)
-        let pas:String? = String(regPasswordTF.text!)
-        let cpas:String? = String(confPasswordTF.text!)
-        //let fName = String(firstNameTF.text!)
-        if fName == nil {
-            displayMessage("Enter First Name")
-        }
-        else if lName == nil{
-            displayMessage("Enter Last name")
-        }
-        else if email == nil{
-            displayMessage("Enter email address")
-        }
-        else if pas == nil{
-            displayMessage("Enter password")
-        }
-        else if cpas != pas{
-            displayMessage("Password mismatch. Please eneter the password again")
-        }
-        else{
+//        let fName:String? = String(firstNameTF.text!)
+//        let lName:String? = String(lastNameTF.text!)
+//        let email:String? = String(emailTF.text!)
+//        let pas:String? = String(regPasswordTF.text!)
+//        let cpas:String? = String(confPasswordTF.text!)
+//        //let fName = String(firstNameTF.text!)
+//        if fName == nil {
+//            displayMessage("Enter First Name")
+//        }
+//        else if lName == nil{
+//            displayMessage("Enter Last name")
+//        }
+//        else if email == nil{
+//            displayMessage("Enter email address")
+//        }
+//        else if pas == nil{
+//            displayMessage("Enter password")
+//        }
+//        else if cpas != pas{
+//            displayMessage("Password mismatch. Please enter the password again")
+//        }
+//        else{
+//            
+//        }
+        let email = self.emailTF.text
+        let password = self.regPasswordTF.text!
+        let finalEmail = email!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        
+        let newUser = PFUser()
+        
+        let userObject = Users()
+        
+        newUser.username = email
+        newUser.password = password
+        newUser.email = finalEmail
+        
+        userObject.firstName = firstNameTF.text!
+        userObject.lastName = lastNameTF.text!
+        userObject.eMail = emailTF.text!
+        
+        newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
             
-        }
+            if ((error) != nil) {
+                let alert = UIAlertController(title: "Error", message:"\(error)", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
+                self.presentViewController(alert, animated: true){}
+            } else {
+                let alert = UIAlertController(title: "Success", message:"Signed up successfully!", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
+                self.presentViewController(alert, animated: true){}
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home")
+                    self.presentViewController(viewController, animated: true, completion: nil)
+                })
+            }
+        })
+
+        
+        
     }
     
     

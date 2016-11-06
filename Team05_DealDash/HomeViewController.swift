@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class HomeViewController: UIViewController {
+    
+    
     
     @IBOutlet weak var welcomeLBL: UILabel!
     
