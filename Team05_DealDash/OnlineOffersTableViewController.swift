@@ -136,8 +136,6 @@ class OnlineOffersTableTableViewController:UITableViewController {
         let image:UIImageView = cell.viewWithTag(100) as! UIImageView
         
         offerAmount.text = String(offers[indexPath.row] + " offer on " + descriptions[indexPath.row])
-        print("from img:\(imageResources[indexPath.row])")
-        print("In table view")
         image.image = imageResources[indexPath.row]
         
         return cell

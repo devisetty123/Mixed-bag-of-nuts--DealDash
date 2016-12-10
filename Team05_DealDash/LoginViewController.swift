@@ -87,11 +87,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        
-        view.addGestureRecognizer(tap)
-        
-        userNameTF.text! = "deviset"
-        passwordTF.text! = "12345"
+            view.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {

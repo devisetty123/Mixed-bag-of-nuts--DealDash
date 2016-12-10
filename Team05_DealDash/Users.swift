@@ -11,7 +11,7 @@ import Foundation
 import Parse
 import Bolts
 
-//cr4eates users class in back4app and stores all the users data
+//creates users class in back4app and stores all the users data
 class Users: PFObject, PFSubclassing {
     @NSManaged var firstName:String!
     @NSManaged var lastName:String!
