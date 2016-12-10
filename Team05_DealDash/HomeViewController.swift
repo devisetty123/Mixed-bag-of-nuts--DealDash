@@ -10,20 +10,17 @@ import UIKit
 import Parse
 import Bolts
 
+//HomeViewController have the details of home page of application
 class HomeViewController: UIViewController {
     
+   @IBOutlet weak var selectLBL: UILabel!               //selectLBL refers to select an option label in storyboard
     
     
-    @IBOutlet weak var welcomeLBL: UILabel!
-    
-    @IBOutlet weak var selectLBL: UILabel!
-    
-    
-    @IBAction func instoreBTN(sender: AnyObject) {
+    @IBAction func inStoreBTN(sender: AnyObject) {      //instoreBTN refers to inStore offers button in storyboard
     }
     
 
-    @IBAction func onlineBTN(sender: AnyObject) {
+    @IBAction func onlineBTN(sender: AnyObject) {       //onlineBTN refers to online offers button in storyboard
     }
     
     

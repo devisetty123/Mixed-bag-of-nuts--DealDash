@@ -10,22 +10,15 @@ import Foundation
 import Parse
 import Bolts
 
+//Category class contains information of a category
 class Category {
-    var name:String
-    var image:String
-    var offersList:[Offers]
-    
-    init(name:String, image:String, offersList:[Offers]) {
+    var name:String     //name is a  stored property that stores the name of a category
+    var image:String    //image is a stored [property that stores the image of a category
+
+    //class initializer with name and image 
+    init(name:String, image:String) {
         self.image = image
         self.name = name
-        self.offersList = offersList
-    }
-    
-    func numOffers() -> Int{
-        return offersList.count
-    }
-    
-    func offersNum(index:Int) -> Offers {
-        return offersList[index]
+
     }
 }

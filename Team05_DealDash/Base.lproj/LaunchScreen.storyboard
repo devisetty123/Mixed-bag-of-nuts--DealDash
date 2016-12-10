@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,17 +18,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dealdash.png" translatesAutoresizingMaskIntoConstraints="NO" id="poD-hY-8AO">
-                                <rect key="frame" x="71" y="250" width="458" height="216"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dealdash.png" translatesAutoresizingMaskIntoConstraints="NO" id="kqo-o6-xiR">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="201" y="136" width="399" height="328"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="201" y="299" width="397" height="326"/>
+                                    <rect key="frame" x="280" y="44" width="240" height="120"/>
                                 </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96554865359999997" green="1" blue="0.9874222828" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kqo-o6-xiR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BTz-s0-ovE"/>
+                            <constraint firstItem="kqo-o6-xiR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="81" id="cG9-W6-giN"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="kqo-o6-xiR" secondAttribute="bottom" constant="267" id="hQQ-Hh-dkB"/>
+                            <constraint firstItem="kqo-o6-xiR" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="210" id="s53-bM-auw"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="kqo-o6-xiR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="BTz-s0-ovE"/>
+                                <exclude reference="cG9-W6-giN"/>
+                                <exclude reference="s53-bM-auw"/>
+                                <exclude reference="hQQ-Hh-dkB"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="kqo-o6-xiR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="BTz-s0-ovE"/>
+                                <include reference="cG9-W6-giN"/>
+                                <include reference="s53-bM-auw"/>
+                                <include reference="hQQ-Hh-dkB"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

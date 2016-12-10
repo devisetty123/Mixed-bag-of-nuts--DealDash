@@ -3,6 +3,12 @@
     {
       "idiom" : "iphone",
       "size" : "29x29",
+      "scale" : "1x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "rsz_2dealdash_copy.png",
       "scale" : "2x"
     },
     {
@@ -11,8 +17,9 @@
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "rsz_1dealdash_copy-2.png",
       "scale" : "2x"
     },
     {
@@ -22,7 +29,18 @@
     },
     {
       "idiom" : "iphone",
+      "size" : "57x57",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "size" : "57x57",
+      "scale" : "2x"
+    },
+    {
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "rsz_3dealdash_copy.png",
       "scale" : "2x"
     },
     {
